@@ -4,8 +4,10 @@ RUN yum update -y && yum install -y git curl java java-devel unzip which && curl
 ENV JAVA_HOME /etc/alternatives/jre_openjdk
 
 #Installing NodsJs
-RUN yum install -y epel-release
-RUN yum install -y nodejs
+RUN yum install -y epel-release && yum install -y nodejs
+
+#Installing Ngnix
+RUN yum install nginx
 
 ARG user=jenkins
 ARG group=jenkins
