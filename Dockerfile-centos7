@@ -75,7 +75,8 @@ USER ${user}
 
 #Installing NodsJs
 RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash - \
-&& yum install nodejs
+&& chmod 777 *
+&& yum install nodejs 
 
 COPY jenkins-support /usr/local/bin/jenkins-support
 COPY jenkins.sh /usr/local/bin/jenkins.sh
